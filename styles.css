@@ -1,0 +1,217 @@
+/* General Styles */
+:root {
+  --main-bg-color: #f8f9fa; /* Define a variable for background color */
+  --main-text-color: #333; /* Define a variable for text color */
+
+}
+
+body {
+  background-color: black; /* change the color of BG*/
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: "Amatic SC", cursive;
+  font-size: 100%;
+}
+
+/* Navigation Bar Style */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("BG main 1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(238, 238, 238);
+}
+
+.nav-links-wrapper {
+  flex: 1; /* Occupy remaining space */
+  display: flex;
+  justify-content: flex-end; /* Align items to the end */
+}
+
+nav img {
+  height: 40px;
+  width: auto;
+}
+
+nav p {
+  color: #fff;
+  padding-left: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  padding: 12px; /* Adjust padding */
+  color: white;
+  -webkit-text-stroke-color: black; /* Stroke color */
+  -webkit-text-stroke-width: 0.7px; /* Stroke width */
+  background-color: white;
+  border-radius: 20px;
+  border: solid #000000 3px;
+}
+
+nav a:hover {
+  background-color: #ddd;
+}
+
+
+/* Main Styles */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: "Amatic SC", cursive;
+  -webkit-text-stroke-color: black; /* Stroke color */
+  -webkit-text-stroke-width: 0.5px; /* Stroke width */
+}
+
+main section {
+  width: 100%;
+  margin: 0.5px;
+  padding: 20px;
+  background-color: var(--main-bg-color); /* Use the defined variable */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main intro-magical-munchies */
+#intro-magical-munchies {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("BG main 1.jpg");
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+}
+
+#intro-magical-munchies #logo-intro {
+  height: 80%;
+  max-width: 70%;
+  align-self: center;
+  justify-self: center;
+}
+
+#intro-magical-munchies p {
+
+  font-size: 300%; /* base font size */
+  text-align: center;
+  color: #fff; /* white text color */
+  line-height: 1.2;
+  margin: 0; /* shorthand for margin-top and margin-bottom */
+  align-self: center;
+}
+
+/* Main Magical Munchies Section Style */
+#main-magical-munchies {
+  display: grid;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("BG main second.jpg");
+  background-size: cover;
+  background-position: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  
+}
+
+#main-magical-munchies #logo-right {
+  height: 70%;
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 100%;
+  align-self:center;
+  justify-self: center;
+
+}
+
+#main-magical-munchies #bottle-center {
+  height: 70%;
+  grid-column: 1;
+  grid-row: 1 / span 2; /* spans 2 rows */
+  max-width: 100%;
+  align-self: center; /* vertically center */
+  justify-self: center; /* horizontally center */
+}
+
+
+#main-magical-munchies p {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 100%;
+  font-size: 20px; /* base font size */
+  text-align: center;
+  color: #fff; /* white text color */
+  line-height: 1.2;
+  margin: 0; /* shorthand for margin-top and margin-bottom */
+  align-self: center;
+}
+
+
+
+#Devteam {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#Devteam ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#Devteam  li {
+  width: 20%; /* Adjust width to 20% of the container with some margin */
+  margin: 10px;
+  padding: 25px; /* Add padding around the text */
+  text-align: center;
+}
+
+#Devteam  li img {
+  width: 100%; /* Make the image fill the container */
+  border-radius: 10%; /* Make the image round */
+}
+
+
+/* Contact Us Style */
+#ContactUs {
+  display: flex;
+  align-items: center;
+}
+
+#ContactUs #mail {
+  max-width: 40%;
+}
+
+#ContactUs h4 {
+  font-size: 3em; /* Adjust font size as needed */
+  margin-bottom: 10px; /* Add some space between h4 and ul */
+}
+
+#ContactUs ul {
+  list-style: none; /* Remove default list style */
+  padding:15% ;/* Remove default padding */
+  margin: 0; /* Remove default margin */
+  flex-direction: column;
+  text-align: left;
+}
+
+#ContactUs li {
+  margin-bottom: 10px; /* Add some space between list items */
+}
+
+
+footer {
+  background-color: black; /* Use the defined variable */
+  padding: 10px 20px;
+  text-align: center;
+
+}
+
+footer p {
+  color: white;
+}
+

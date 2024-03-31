@@ -1,0 +1,243 @@
+:root {
+  --main-bg-color: #f8f9fa; /* Define a variable for background color */
+  --main-text-color: #333; /* Define a variable for text color */
+
+}
+
+
+body {
+  background-color: black; /* change the color of BG*/
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: "Amatic SC", cursive;
+  font-size: 100%;
+  color: #fff; /* white text color */
+  height: 100%;
+  
+  /*
+  -webkit-text-stroke-color: black; 
+  -webkit-text-stroke-width:0.001px; 
+  */
+}
+
+header, nav, main, footer {
+  height: 25%; /* Set each section to occupy 25% of the viewport height */
+  overflow: hidden; /* Hide overflow content */
+}
+
+/* Navigation Bar Style */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--main-bg-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("BG main 1.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgb(238, 238, 238);
+}
+
+.nav-links-wrapper {
+  flex: 1; /* Occupy remaining space */
+  display: flex;
+  justify-content: flex-end; /* Align items to the end */
+}
+
+nav img {
+  height: 40px;
+  width: auto;
+}
+
+nav p {
+  color: #fff;
+  padding-left: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  padding: 12px; /* Adjust padding */
+  color: white;
+  -webkit-text-stroke-color: black; /* Stroke color */
+  -webkit-text-stroke-width: 0.7px; /* Stroke width */
+  background-color: white;
+  border-radius: 20px;
+  border: solid #000000 2px;
+}
+
+nav a:hover {
+  background-color: #ddd;
+}
+
+
+/* Main Styles */
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+main section {
+  width: 100%;
+  margin: 0.5px;
+  padding: 20px;
+  background-color: var(--main-bg-color); /* Use the defined variable */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main intro-magical-munchies */
+#intro-magical-munchies {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg1.png");
+  background-size: auto 50%; /* Set background size to auto width and 25% height */
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+
+#intro-magical-munchies #logo-intro {
+  height: 80%;
+  max-width: 70%;
+  align-self: center;
+  justify-self: center;
+}
+
+#intro-magical-munchies p {
+
+  font-size: 300%; /* base font size */
+  text-align: center;
+  line-height: 1.2;
+  margin: 0; /* shorthand for margin-top and margin-bottom */
+  align-self: center;
+}
+
+/* Main Magical Munchies Section Style */
+#main-magical-munchies {
+  display: grid;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg2.png");
+  background-size: auto 100%; /* Set background size to auto width and 25% height */
+  background-size: cover;
+  background-position: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  height: 100%;
+}
+
+#main-magical-munchies #logo-right {
+  height: 60%;
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 100%;
+  align-self:center;
+  justify-self: center;
+
+}
+
+#main-magical-munchies #bottle-center {
+  height: 70%;
+  grid-column: 1;
+  grid-row: 1 / span 2; /* spans 2 rows */
+  max-width: 100%;
+  align-self: center; /* vertically center */
+  justify-self: center; /* horizontally center */
+}
+
+
+#main-magical-munchies p {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 100%;
+  font-size: 200%; /* base font size */
+  text-align: center;
+  line-height: 1.2;
+  margin: 0; /* shorthand for margin-top and margin-bottom */
+  align-self: center;
+  padding-bottom: 5%;
+
+}
+
+
+
+#Devteam {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 200%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg3.png");
+  background-size: auto 100%; /* Set background size to auto width and 25% height */
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+
+}
+
+#Devteam ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#Devteam  li {
+  width: 20%; /* Adjust width to 20% of the container with some margin */
+  margin: 10px;
+  padding: 5%; /* Add padding around the text */
+  text-align: center;
+  font-size: 120%; /* base font size */
+  -webkit-text-stroke-width: 1px; /* Stroke width */
+}
+
+#Devteam  li img {
+  width: 100%; /* Make the image fill the container */
+  border-radius: 10%; /* Make the image round */
+}
+
+
+/* Contact Us Style */
+#ContactUs {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg4.png");
+  background-size: auto 100%; /* Set background size to auto width and 25% height */
+  font-size:x-large;
+}
+
+#ContactUs #mail {
+  max-width: 40%;
+}
+
+#ContactUs h4 {
+  font-size: 3em; /* Adjust font size as needed */
+  margin-bottom: 10px; /* Add some space between h4 and ul */
+}
+
+#ContactUs ul {
+  list-style: none; /* Remove default list style */
+  padding:15% ;/* Remove default padding */
+  margin: 0; /* Remove default margin */
+  flex-direction: column;
+  text-align: left;
+}
+
+#ContactUs li {
+  margin-bottom: 10px; /* Add some space between list items */
+}
+
+
+
+
+
+
+
+
+
+
+

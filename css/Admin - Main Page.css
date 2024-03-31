@@ -1,0 +1,76 @@
+.intro-admin-page {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/AdminManage/AdminChamber.png");
+    background-size: cover; /* Adjust background size */
+    background-position: center; /* Center the background image */
+    height: 100vh; /* Adjust height as needed */
+}
+
+.intro-admin-page img {
+    width: 50%; /* Adjust image width as needed */
+}
+
+.intro-admin-page p {
+
+    text-align: center; /* Center text */
+    color: white; /* Adjust text color */
+    margin-top: 5%; /* Add margin to separate image and text */
+    font-size: xx-large;
+}
+
+.Admin-Management-part {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    height: 100vh; /* Adjust height as needed */
+}
+
+.admin-action-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%; /* Adjust height as needed */
+}
+
+.cookie-management {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Image/AdminManage/CookieManagement BG.png');
+    background-size: cover;
+    background-position: center; /* Center the background image */
+    height: 100%; /* Set height to fill container */
+    width: 50%; /* Set width to 50% of the container */
+}
+
+.admin-management {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../Image/AdminManage/AdminManagement BG.png');
+    background-size: cover;
+    background-position: center; /* Center the background image */
+    height: 100%; /* Set height to fill container */
+    width: 50%; /* Set width to 50% of the container */
+}
+
+
+.admin-action-container h2 {
+    padding-bottom: 10%;
+    color: white;
+    text-align: center;
+}
+
+.Admin-Management-part img {
+    width: 60%; /* Adjust image width */
+    max-width: 100%; /* Set maximum width to 100% of the container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Ensure the image behaves as a block element */
+    margin: auto; /* Center the image horizontally */
+}
+
+
+.Admin-Management-part a:hover img,
+.Admin-Management-part a:hover h2 {
+  transform: scale(1.4); /* Enlarge the image by 1.1 times on hover */
+}

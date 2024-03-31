@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/add_cookie.css">
+    <link rel="stylesheet" href="../css/nav_footer.css">
+    <script src="../script.js"></script>
+</head>
+<body>
+
+    <div class="add-cookie">
+        <form action="Admin-Cookie_Add" method="post">
+
+            <label for="Upload-Photo">Upload Photo :</label>
+            <input type="file" id="Upload-Photo" name="Upload-Photo" accept="image/*"><br>
+
+            <label for="Name">Name :</label>
+            <input type="text" id="Name" name="Name" required><br>
+
+            <label for="Flavours">Flavours :</label>
+            <input type="text" id="Flavours" name="Flavours" required><br>
+
+            <label for="Price">Price :</label>
+            <input type="number" id="Price" name="Price" min="0" step="0.5" required><br>
+
+            <label for="Details">Details :</label>
+            <textarea id="Details" name="Details" required></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

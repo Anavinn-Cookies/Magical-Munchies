@@ -1,0 +1,60 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    padding: 10px 20px;
+    background-color: black;
+  }
+  
+  .nav-links-wrapper {
+    flex: 1; /* Occupy remaining space */
+    display: flex;
+    justify-content: flex-end; /* Align items to the end */
+  }
+  
+  .nav-links-wrapper a:hover {
+    transform: scale(1.3); /* Enlarge the image by 1.1 times on hover */
+  }
+  
+  nav img {
+    height: 40px;
+    width: auto;
+  }
+  
+  nav p {
+    color: #fff;
+    padding-left: 10px;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    padding: 12px; /* Adjust padding */
+    color: white;
+    -webkit-text-stroke-color: black; /* Stroke color */
+    -webkit-text-stroke-width: 0.7px; /* Stroke width */
+    background-color: white;
+    border-radius: 20px;
+    border: solid #000000 2px;
+  }
+  
+  nav a:hover {
+    background-color: #ddd;
+  }
+
+
+footer {
+    background-color: black; /* Use the defined variable */
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: auto; /* Push the footer to the bottom */
+  }
+
+  
+  footer p {
+    color: white;
+    font-size: 120%; /* base font size */
+    -webkit-text-stroke-width: 0.4px; /* Stroke width */
+  }
+

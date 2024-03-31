@@ -1,0 +1,55 @@
+  
+/* START admin login css */
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Set background color to white with 50% opacity */
+    border-radius: 10%;
+    width: 60%;
+    margin: 0 auto; /* This centers the container horizontally */
+    padding: 5%;
+    margin-top: 5%;
+    
+   
+  }
+
+  .BG-container {
+    flex: 1; /* Let this container grow to fill remaining space */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/login/CookieBG\ 1.png");
+    background-size: auto 50%; /* Set background size to auto width and 50% height */
+    height: 100vh; /* Make the container take the full height of the viewport */
+  }
+  
+  
+  .login-container h2 {
+    color: black;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    -webkit-text-stroke-width:0.5px;
+    font-size:xx-large;
+  }
+  
+  .login-container .form-group {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding-bottom: 5px;
+    -webkit-text-stroke-color: #000;
+    -webkit-text-stroke-width: 0px;
+  }
+  
+  .login-container input[type="text"],
+  .login-container input[type="password"],
+  .login-container button[type="submit"] {
+      width: 100%; /* Adjust the width of the input fields and button */
+      padding: 10px; /* Adjust padding as needed */
+      margin-bottom: 10px; /* Adjust margin as needed */
+      border-radius: 10%; /* Rounded corners for input fields and button */
+     
+      box-sizing: border-box; /* Include padding and border in input width */
+  
+      height: 50px;
+      font-size:100%;
+  }
+  
+  /* END admin login css */
+  

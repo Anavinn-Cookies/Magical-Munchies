@@ -1,0 +1,9 @@
+/* ADD cookie page */
+.add-cookie {
+    background-color: whitesmoke;
+    border-radius: 15%;
+    width: 60%;
+    margin: 0 auto; /* This centers the container horizontally */
+    padding: 5%;
+    margin-top: 5%;
+  }

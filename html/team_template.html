@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../css/styles_mainPage.css">
+  <link rel="stylesheet" href="../css/nav_footer.css">
+  <style>
+    /* Additional CSS styles */
+    #section-template {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px 0;
+    }
+    #section-template img {
+      width: 50%;
+    }
+    #section-template .content {
+      width: 40%;
+    }
+    @media screen and (max-width: 768px) {
+      /* Responsive styles */
+      #section-template {
+        flex-direction: column;
+        align-items: center;
+      }
+      #section-template img {
+        width: 80%;
+      }
+      #section-template .content {
+        width: 80%;
+        margin-top: 20px;
+      }
+    }
+    #section-template {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg3.png");
+      background-size: auto 50%; /* Set background size to auto width and 25% height */
+      background-size: cover;
+      background-position: center;
+      place-items: center;
+      height: 100%;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../script.js"></script>
+  <title>Magical Munchies</title>
+</head>
+<body>
+
+  <nav>
+    <img src="../Image/NAV/text_logo 2.png" alt="Magical Munchies Logo">
+    <p>Magical Munchies</p>
+    <div class="nav-links-wrapper">
+      <a href="mainPage.html">Home</a>
+      <a href="#">Store</a>
+      <a href="admin.html">Login</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="section-template">
+      <img id="section-image" src="" alt="Template Image">
+      <div class="content">
+        <h2 id="section-title">-Section Title-</h2>
+        <ul id="section-details">
+          <li>Name: </li>
+          <li>Birthday: </li>
+          <li>Instagram: </li>
+          <li>Proficiency: </li>
+        </ul>
+        <button onclick="history.back()">Back</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright © 2023. All Right Reserved - AnavinnCookie</p>
+  </footer>
+
+  <script>
+    // Replace placeholders with actual content
+    document.getElementById('section-image').src = "../Image/mainPage/Barbell.png"; // Replace with actual image URL
+    document.getElementById('section-title').innerText = "The Tortured Bakers Department"; // Replace with actual title
+    document.querySelectorAll('#section-details li')[0].innerText = "Name: MagicalMunchies@gmail.com"; // Replace with actual detail
+    // Add more lines to replace other details as needed
+  </script>
+</body>
+</html>

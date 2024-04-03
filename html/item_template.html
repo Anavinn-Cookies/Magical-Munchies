@@ -5,23 +5,26 @@
     <link rel ="stylesheet" href="../css/nav_footer.css">
     
     <style>
+
+     
     #img {
+    
       width: 50%;
-      height: 60%;
+      height: 40%;
     }
-    #template {
-      align-items: center;
-      padding: 10px 0;
-      color: black;
-      width: 80%;
-    }
-    @media only screen and (min-width: 768px) {
+   
+
+  
     .container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 80px; /* Add gap between grid items */
+        height: 100vh; /* Adjust height as needed */
+        align-self:center;
+     justify-self: center;
+    background: local;
+     max-width: 100%;
     }  
-    }
+    
+   
     body{
         background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg2.png");   
     }
@@ -42,12 +45,17 @@
     </div>
   </nav>
 
-    <main class="container">
+    <main>
+      <div class="container">
           <img id="img" src="../Image/mainPage/Bg2.png" alt="Template Image">
-          <div class="content" id="name"></div>
-          <div class="content" id="detail"></div>
-          <div class="content" id="price"></div>
-      </main>
+      </div>
+
+      <div class="container">
+        <!-- <div class="content" id="name">Name</div>
+            <div id="price"></div> -->
+            <p>Name</p>
+      </div>
+    </main>
 
     <footer>
       <p>Copyright © 2023. All Right Reserved - AnavinnCookie</p>

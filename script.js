@@ -24,8 +24,6 @@ app.post('/admin-main', function(req, res) {
     res.sendFile(path.join(__dirname, '/html/Admin - Main Page.html'));
 });
 
-
-
 app.listen(port, () => {
     console.log(`Server listening on port: ${port}`);
 });

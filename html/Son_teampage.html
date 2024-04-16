@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="../css/styles_mainPage.css">
+  <link rel="stylesheet" href="../css/nav_footer.css">
+  <style>
+    /* Additional CSS styles */
+    #section-template {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      padding: 50px 0;
+    }
+    #section-template img {
+      width: 25%;
+      height: auto;
+    }
+    #section-template .content {
+      width: 40%;
+    }
+    #section-details{
+      font-size: 28px;
+    }
+    @media screen and (max-width: 768px) {
+      /* Responsive styles */
+      #section-template {
+        flex-direction: column;
+        align-items: center;
+      }
+      #section-template img {
+        width: 80%;
+      }
+      #section-template .content {
+        width: 80%;
+        margin-top: 20px;
+      }
+    }
+    main {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg3.png");
+      background-size: auto 50%; /* Set background size to auto width and 25% height */
+      background-size: cover;
+      background-position: center;
+      place-items: center;
+      height: 100%;
+    }
+    section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg3.png");
+      background-size: auto 50%; /* Set background size to auto width and 25% height */
+      background-size: cover;
+      background-position: center;
+      place-items: center;
+      height: 100%;
+    }
+  ol {
+    list-style-type: none; /* Removes the bullet points */
+  }
+  #section-title{
+    font-size: 60px;
+  }
+
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../script.js"></script>
+  <title>Magical Munchies</title>
+</head>
+
+<body>
+
+  <nav>
+    <img src="../Image/NAV/text_logo 2.png" alt="Magical Munchies Logo">
+    <p>Magical Munchies</p>
+    <div class="nav-links-wrapper">
+      <a href="mainPage.html">Home</a>
+      <a href="#">Store</a>
+      <a href="admin.html">Login</a>
+    </div>
+  </nav>
+
+  <main>
+      <h1  id="section-title">-The Tortured Bakers Department-</h1>
+      <section id="section-template">
+      <img id="section-image" src="../Image/mainPage/Son.png" alt="Template Image">
+      <div class="content">
+        <ol id="section-details">
+          <li>Name: Anavinn Rujithanyapat </li>
+          <li>Birthday: 1 February 2004</li>
+          <li>Instagram: @taiyou.son</li>
+          <li>Proficiency:</li>
+            <ul>
+              <li>Master of Herbology</li>
+            </ul>
+          </ol>
+        <button onclick="history.back()">Back</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Copyright © 2023. All Right Reserved - AnavinnCookie</p>
+  </footer>
+
+</body>
+</html>
+ 

@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000; // Default port is 3000 if PORT environment variable is not set
 const MagicalMunchiesService = require('./MagicalMunchiesService');
 const CookieManagementService = require('./CookieManagementService');
+const AdminManagementService = require('./AdminManagementService');
 const path = require('path');
 const dotenv = require("dotenv");
 dotenv.config();
@@ -140,8 +141,75 @@ app.post('/cookie-remove/:ProductID', (req, res) => {
     });
 });
 
+// =======================================
 
+// ========== Admin Management ==========
 
+// Admin Management: Add Admin
+app.post('/admin-add', upload.single('Photo'), express.urlencoded({ extended: true }), (req, res) => {
+    if (!req.file) {
+        console.error('No file uploaded');
+        res.status(400).send('Bad Request: No file uploaded');
+        return;
+    }
+
+    const adminData = req.body;
+    adminData.PhotoPath = '/Image/AdminImage/' + req.file.originalname;
+    AdminManagementService.addAdmin(adminData, (err, result) => {
+        if (err) {
+            console.error('Error adding admin:', err);
+            res.status(500).send('Internal Server Error');
+            return;
+        }
+        res.status(200).send('Admin added successfully');
+    });
+});
+
+// Admin Management: Select Admin Edit
+app.get('/admin/:ProductID', (req, res) => {
+    const productID = req.query.ProductID;
+    AdminManagementService.selectAdmin(productID, (err, result) => {
+        if (err) {
+            console.error('Error selecting admin:', err);
+            res.status(500).json({ error: 'Error selecting admin' });
+        } else if (!result || Array.isArray(result) && result.length === 0) {
+            res.status(404).json({ error: 'Admin not found' });
+        } else {
+            res.sendFile(path.join(__dirname, '/html/AdminManagement/admin_edit.html'), { adminData : result });
+        }
+    });
+});
+
+// Admin Management: Edit Admin
+app.post('/admin-edit/:AdminID', (req, res) => {
+    const productID = req.body.ProductID;
+    const newData = req.body;
+    AdminManagementService.editAdmin(productID, newData, (err, result) => {
+        if (err) {
+            console.error('Error updating admin:', err);
+            res.status(500).json({ error: 'Error updating admin' });
+        } else if (result === 0) {
+            res.status(404).json({ error: 'Admin not found' });
+        } else {
+            res.status(200).json({ message: 'Admin updated successfully' });
+        }
+    });
+});
+
+// Admin Management: Remove Admin
+app.post('/admin-remove/:AdminID', (req, res) => {
+    const productID = req.body.ProductID;
+    AdminManagementService.deleteAdmin(productID, (err, result) => {
+        if (err) {
+            console.error('Error updating admin:', err);
+            res.status(500).json({ error: 'Error deleting admin' });
+        } else if (result === 0) {
+            res.status(404).json({ error: 'Admin not found' });
+        } else {
+            res.status(200).json({ message: 'Admin deleted successfully' });
+        }
+    });
+});
 
 // =======================================
 

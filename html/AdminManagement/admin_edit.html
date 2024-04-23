@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/CookieManagement/cookie_add.css">
+    <link rel ="stylesheet" href="../css/footer.css">
+    <link rel ="stylesheet" href="../css/navbar.css">
+    <script src="../script.js"></script>
+    <title>Magical Munchies - Edit Admin</title>
+    <meta name="description" content="Magical Munchies is a captivating store that specializes in a selection of fantasy themed cookies and potions.">
+    <meta name="keywords" content="Magical Munchies, Anavinn-Cookies, Napatkrit Asavarojpanich, Kaninpat Janthasri, Jirakit Kanjanawaraporn, Natchapol Mingmahaphan, Anavinn Rujithanyapat">
+    <link rel="icon" href="../Image/icon.png">
+</head>
+<body>
+
+    <nav>
+        <img src="../Image/NAV/text_logo 2.png" alt="Magical Munchies Logo">
+        <p>Magical Munchies [ADMIN]</p>
+        <div class="nav-links-wrapper">
+            <a href="Admin - Main Page.html">Home</a>
+            <a href="../CookieManagement/cookie_management.html">Manage Cookie</a>
+            <a href="manage_admin.html">Manage Admin</a>
+            <a href="mainPage.html">Log out</a>
+        </div>
+    </nav>
+
+    <div class="form">
+        <div class="top-row">
+            <h1>Edit Admin</h1>
+        </div>
+        <div class="middle-row">
+            <form class="form-group" action="/admin-edit/:AdminID" method="post" enctype="multipart/form-data">
+                <div class="right-column">
+
+                    <label for="AdminID">Admin ID:</label>
+                    <input type="number" step="1" id="AdminID" name="AdminID"><br><br>
+
+                    <label for="Fname">First Name:</label>
+                    <input type="text" id="Fname" name="Fname"><br><br>
+
+                    <label for="Lname">Last Name:</label>
+                    <input type="text" id="Lname" name="Lname"><br><br>
+
+                    <label for="Proficiency">Proficiency:</label>
+                    <textarea id="Proficiency" name="Proficiency" rows="4" cols="50"></textarea><br><br>
+        
+                    <label for="DOB">Date of Birth:</label>
+                    <input type="date" id="DOB" name="DOB"><br><br>
+
+                    <label for="Username">Username:</label>
+                    <input type="text" id="Username" name="Username"><br><br>
+
+                    <label for="Password">Password:</label>
+                    <input type="password" id="Password" name="Password"><br><br>
+                </div>
+                <div class="left-column">
+                    <label for="photo">Photo:</label>
+                    <input type="file" id="photo" name="Photo"><br><br>
+                </div>
+        </div>
+        <div class="last-row">
+            <input type="submit" value="Edit Cookie">
+        </div>
+        </form>
+    </div>
+
+    <footer>
+        <p>Copyright © 2023. All Right Reserved - AnavinnCookie</p>
+    </footer>
+
+</body>
+</html>

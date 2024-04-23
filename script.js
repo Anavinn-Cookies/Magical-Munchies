@@ -1,13 +1,17 @@
-// Import and use Environmental Variable
-const dotenv = require("dotenv");
-dotenv.config();
-
 const express = require('express');
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 3000; // Default port is 3000 if PORT environment variable is not set
 const MagicalMunchiesService = require('./MagicalMunchiesService');
 const CookieManagementService = require('./CookieManagementService');
 const path = require('path');
+const dotenv = require("dotenv");
+dotenv.config();
+
+const appRouter = require('./Backend/app');
+const cors = require('cors');
+app.use(cors());
+
+app.use('/', appRouter);
 
 // Middleware to parse JSON bodies
 app.use(express.json());
@@ -30,20 +34,28 @@ app.get('/admin', (req, res) => {
 
 // Admin Login
 app.post('/admin-main', express.urlencoded({ extended: true }), (req, res) => {
-    const admin_data = req.body;
+    // Request body is parsed using express.urlencoded middleware
+    const admin_data = req.body; // Extracting data from the request body
+    
+    // Call to MagicalMunchiesService.selectAdmin to check admin login
     MagicalMunchiesService.selectAdmin(admin_data, (error, loggedInUser) => {
         if (error) {
+            // If an error occurs during login check, send 500 Internal Server Error
             console.error('Error checking login:', error);
             res.status(500).send('Internal Server Error');
         } else {
+            console.log(loggedInUser);
             if (loggedInUser) {
+                // If loggedInUser exists, send the admin_main_page.html file
                 res.sendFile(path.join(__dirname, '/html/admin_main_page.html'));
             } else {
-                res.status(401).send('Unauthorized'); // Unauthorized if login fails
+                // If login fails (no loggedInUser), send 401 Unauthorized
+                res.status(401).send('Unauthorized');
             }
         }
     });
 });
+
 
 // ========== Cookie Management ==========
 
@@ -125,6 +137,9 @@ app.delete('/cookie/:id', (req, res) => {
         }
     });
 });
+
+
+
 
 // =======================================
 

@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Name: ${product.Name}</p>
                     <p>Price: ${product.Price}</p>
                     <!-- Add more details as needed -->
+                    <img id="section-image" src="..${product.PhotoPath}">
                 `;
                 // Add event listener to each product box
                 productBox.addEventListener('click', () => {

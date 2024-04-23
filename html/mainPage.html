@@ -79,6 +79,25 @@
         <li><strong>Facebook:</strong> Magical Munchies</li>
       </ul>
     </section>
+
+    <div id="googleMap" style="width:100%;height:400px;"></div>
+    
+    <script>
+    function myMap() {
+      const LatLng = {lat: 13.794403191121733, lng: 100.32472432429766};
+      var map = new google.maps.Map(document.getElementById('googleMap'), {
+                center: LatLng,
+                zoom: 20
+            });
+      new google.maps.Marker({
+        position: LatLng,
+        map,
+        title:"Magical Munchies"
+      });
+    }
+    </script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaYlzHjOYYLJCODmy4B9ZXfrWW6wO8UTU&callback=myMap"></script>
   </main>
   <footer>
     <p>Copyright © 2023. All Right Reserved - AnavinnCookie</p>

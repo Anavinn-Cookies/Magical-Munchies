@@ -1,23 +1,9 @@
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fadeOut {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 body {
+  height: 100vh;
+  margin: 0;
   background-color: black;
   background-image: url("../Image/Index/index_bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  animation: fadeIn 2s forwards;
+  background-size: 100% 100%;
 }/*# sourceMappingURL=index.css.map */

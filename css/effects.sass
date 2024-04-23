@@ -1,0 +1,6 @@
+@mixin glassmorphism($color, $blur, $opacity)
+  background: rgba($color, $opacity)
+  backdrop-filter: blur($blur)
+  -webkit-backdrop-filter: blur($blur)
+  border-radius: 10px
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)

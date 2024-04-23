@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/login_admin.css">
-    <link rel ="stylesheet" href="../css/nav_footer.css">
+    <link rel="stylesheet" href="../css/admin_login.css">
+    <link rel ="stylesheet" href="../css/footer.css">
+    <link rel ="stylesheet" href="../css/navbar.css">
     <script src="../script.js"></script>
     <title>Magical Munchies - Login</title>
     <meta name="description" content="Magical Munchies is a captivating store that specializes in a selection of fantasy themed cookies and potions.">
@@ -12,39 +13,35 @@
     <link rel="icon" href="../Image/icon.png">
 </head>
 <body>
-    <div class="BG-container">
-        <nav>
-            <img src="../Image/NAV/text_logo 2.png" alt="Magical Munchies Logo">
-            <p>Magical Munchies</p>
-            <div class="nav-links-wrapper">
-            <a href="mainPage.html">Home</a>
-            <a href="#">Store</a>
-            <a href="admin.html">Login</a>
-            </div>
-        </nav>
-
-
-
-        <div class="login-container">
-            <h2>Admin-Login</h2>
-            <form action="/admin-main" method="post">
-                <div class="form-group">
-                    <label for="username"></label>
-                    <input type="text" name="username" id="username" value="test_username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password"></label>
-                    <input type="password" name="password" id="password" value="test_password" required>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Sign in </button>
-                </div>
-            </form>
+    <nav>
+        <img src="../Image/NAV/text_logo 2.png" alt="Magical Munchies Logo">
+        <p>Magical Munchies</p>
+        <div class="nav-links-wrapper">
+        <a href="mainPage.html">Home</a>
+        <a href="#">Store</a>
+        <a href="admin.html">Login</a>
         </div>
+    </nav>
+
+    <div class="login-container">
+        <h2>Admin-Login</h2>
+        <form action="/admin-main" method="post">
+            <div class="form-group">
+                <label for="username"></label>
+                <input type="text" name="username" id="username" value="test_username" required>
+            </div>
+            <div class="form-group">
+                <label for="password"></label>
+                <input type="password" name="password" id="password" value="test_password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign in </button>
+            </div>
+        </form>
     </div>
     <footer>
         <p>Copyright © 2023. All Right Reserved - AnavinnCookie</p>
-      </footer>
+    </footer>
 
 </body>
 </html>

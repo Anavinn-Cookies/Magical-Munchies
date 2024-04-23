@@ -81,6 +81,17 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
+
+// Testing Insert new cookie
+// method: post
+// URL: localhost:3000/cookie-add
+// body: raw JSON
+// {
+//     "ProductID": 11,
+//     "name": "New Cookie Name"
+// }
+// }
+
 // Cookie Management: Add Cookie
 app.post('/cookie-add', upload.single('Photo'), express.urlencoded({ extended: true }), (req, res) => {
     if (!req.file) {
@@ -101,9 +112,23 @@ app.post('/cookie-add', upload.single('Photo'), express.urlencoded({ extended: t
     });
 });
 
+
+
+
+// Testing get a cookie
+// method: get
+// URL: localhost:3000/cookie/5
+
+// Testing get a cookie
+// method: get
+// URL: localhost:3000/cookie/6
+
 // Cookie Management: Select Cookie Edit
 app.get('/cookie/:ProductID', (req, res) => {
-    const productID = req.query.ProductID;
+    const productID = req.params.ProductID;
+    console.log(req.params); // Log the entire params object
+    console.log(req.params.ProductID); // Log the value of ProductID
+
     CookieManagementService.selectCookie(productID, (err, result) => {
         if (err) {
             console.error('Error selecting cookie:', err);
@@ -116,10 +141,25 @@ app.get('/cookie/:ProductID', (req, res) => {
     });
 });
 
+
+// Testing edit a cookie
+// method: post
+// URL: localhost:3000/cookie-edit/8
+// Body :  {
+//   "name": "New cookie 8"
+// }
+
+// Testing edit a cookie
+// method: post
+// URL: localhost:3000/cookie-edit/5
+// Body :    {
+//   "price": "40.00"
+// }
 // Cookie Management: Edit Cookie
 app.post('/cookie-edit/:ProductID', (req, res) => {
-    const productID = req.body.ProductID;
+    const productID = req.params.ProductID;
     const newData = req.body;
+    console.log(req.body);
     CookieManagementService.editCookie(productID, newData, (err, result) => {
         if (err) {
             console.error('Error updating cookie:', err);
@@ -132,9 +172,19 @@ app.post('/cookie-edit/:ProductID', (req, res) => {
     });
 });
 
+
+// Testing remove a cookie
+// method: post
+// URL: localhost:3000/cookie-remove/11
+
+// Testing remove a cookie
+// method: post
+// URL: localhost:3000/cookie-edit/12
+
 // Cookie Management: Remove Cookie
 app.post('/cookie-remove/:ProductID', (req, res) => {
     const productID = req.body.ProductID;
+    console.log(productID)
     CookieManagementService.deleteCookie(productID, (err, result) => {
         if (err) {
             console.error('Error updating cookie:', err);
@@ -147,9 +197,11 @@ app.post('/cookie-remove/:ProductID', (req, res) => {
     });
 });
 
+
 // =======================================
 
 // ========== Admin Management ==========
+
 
 // Admin Management: Add Admin
 app.post('/admin-add', upload.single('Photo'), express.urlencoded({ extended: true }), (req, res) => {
@@ -171,9 +223,12 @@ app.post('/admin-add', upload.single('Photo'), express.urlencoded({ extended: tr
     });
 });
 
+
+
 // Admin Management: Select Admin Edit
 app.get('/admin/:ProductID', (req, res) => {
-    const productID = req.query.ProductID;
+    const productID = req.body.ProductID;
+    console.log(req.params)
     AdminManagementService.selectAdmin(productID, (err, result) => {
         if (err) {
             console.error('Error selecting admin:', err);
@@ -186,9 +241,25 @@ app.get('/admin/:ProductID', (req, res) => {
     });
 });
 
+
+
+// Testing edit a admin
+// method: post
+// URL: localhost:3000/admin-edit/1
+// Body :  {
+//   "IG": "@napatkrit"
+// }
+
+// Testing edit a admin
+// method: post
+// URL: localhost:3000/admin-edit/2
+// Body :    {
+//   "IG": "@golf"
+// }
 // Admin Management: Edit Admin
 app.post('/admin-edit/:AdminID', (req, res) => {
-    const productID = req.body.ProductID;
+    console.log(req.params)
+    const productID = req.params.AdminID;
     const newData = req.body;
     AdminManagementService.editAdmin(productID, newData, (err, result) => {
         if (err) {
@@ -202,9 +273,19 @@ app.post('/admin-edit/:AdminID', (req, res) => {
     });
 });
 
+
+
+// Testing remove a admin
+// method: post
+// URL: localhost:3000/admin-remove/1
+
+// Testing remove a admin
+// method: post
+// URL: localhost:3000/admin-remove/2
+
 // Admin Management: Remove Admin
 app.post('/admin-remove/:AdminID', (req, res) => {
-    const productID = req.body.ProductID;
+    const productID = req.params.AdminID;
     AdminManagementService.deleteAdmin(productID, (err, result) => {
         if (err) {
             console.error('Error updating admin:', err);

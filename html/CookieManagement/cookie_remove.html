@@ -7,7 +7,7 @@
     <link rel ="stylesheet" href="../css/footer.css">
     <link rel ="stylesheet" href="../css/navbar.css">
     <script src="../script.js"></script>
-    <title>Magical Munchies - Edit Cookie</title>
+    <title>Magical Munchies - Delete Cookie</title>
     <meta name="description" content="Magical Munchies is a captivating store that specializes in a selection of fantasy themed cookies and potions.">
     <meta name="keywords" content="Magical Munchies, Anavinn-Cookies, Napatkrit Asavarojpanich, Kaninpat Janthasri, Jirakit Kanjanawaraporn, Natchapol Mingmahaphan, Anavinn Rujithanyapat">
     <link rel="icon" href="../Image/icon.png">
@@ -19,7 +19,7 @@
         <p>Magical Munchies [ADMIN]</p>
         <div class="nav-links-wrapper">
             <a href="Admin - Main Page.html">Home</a>
-            <a href="cookie_main_page.html">Manage Cookie</a>
+            <a href="/CookieManagement/cookie_main_page.html">Manage Cookie</a>
             <a href="manage_admin.html">Manage Admin</a>
             <a href="mainPage.html">Log out</a>
         </div>
@@ -27,10 +27,10 @@
 
     <div class="form">
         <div class="top-row">
-            <h1>Edit Cookie</h1>
+            <h1>Delete Cookie</h1>
         </div>
         <div class="middle-row">
-            <form class="form-group" action="/cookie/:ProductID" method="get" enctype="multipart/form-data">
+            <form class="form-group" action="/cookie-remove/:ProductID" method="post" enctype="multipart/form-data">
                 <div class="right-column">
                     <label for="ProductID">Product ID:</label>
                     <input type="number" step="1" id="ProductID" name="ProductID" required><br><br>
@@ -39,7 +39,7 @@
                 </div>
         </div>
         <div class="last-row">
-            <input type="submit" value="Select Product">
+            <input type="submit" value="Delete Cookie">
         </div>  
             </form>
     </div>

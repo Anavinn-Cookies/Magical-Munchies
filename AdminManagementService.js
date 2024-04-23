@@ -22,38 +22,38 @@ connection.connect((err) => {
   console.log('Connected to MySQL database');
 });
 
-// ========== Cookie Management ==========
+// ========== Admin Management ==========
 
-// Cookie Management: Add Cookie
-function addCookie(cookieData, callback) {
+// Admin Management: Add Admin
+function addAdmin(adminData, callback) {
     const sql = 'INSERT INTO `Product` (`Name`, `Flavor`, `Detail`, `Price`, `PhotoPath`) VALUES (?, ?, ?, ?, ?)';
-    connection.query(sql, [cookieData.Name, cookieData.Flavor, cookieData.Detail, cookieData.Price, cookieData.PhotoPath], (err, result) => {
+    connection.query(sql, [adminData.Name, adminData.Flavor, adminData.Detail, adminData.Price, adminData.PhotoPath], (err, result) => {
       if (err) {
-        console.error('Error inserting cookie:', err);
+        console.error('Error inserting admin:', err);
         callback(err, null);
         return;
       }
-      console.log('Inserted cookie with ID:', result.insertId);
+      console.log('Inserted admin with ID:', result.insertId);
       callback(null, result.insertId);
     });
 }
 
-// Cookie Management: Select Cookie
-function selectCookie(productID, callback) {
+// Admin Management: Select Admin
+function selectAdmin(productID, callback) {
   const sql = 'SELECT * FROM Product WHERE ProductID=?';
   connection.query(sql, [productID], (err, result) => {
     if (err) {
-      console.error('Error selecting cookie:', err);
+      console.error('Error selecting admin:', err);
       callback(err, null);
       return;
     }
-    console.log('Selected cookie:', result);
+    console.log('Selected admin:', result);
     callback(null, result);
   });
 }
 
-// Cookie Management: Edit Cookie
-function editCookie(ProductID, newData, callback) {
+// Admin Management: Edit Admin
+function editAdmin(ProductID, newData, callback) {
   let sql = 'UPDATE Product SET ';
   const params = [];
   const updateFields = [];
@@ -93,23 +93,23 @@ function editCookie(ProductID, newData, callback) {
 
   connection.query(sql, params, (err, result) => {
       if (err) {
-          console.error('Error updating cookie:', err);
+          console.error('Error updating admin:', err);
           callback(err, null);
           return;
       }
-      console.log('Updated cookie with ID:', ProductID);
-      console.log('Updated cookie:', result);
+      console.log('Updated admin with ID:', ProductID);
+      console.log('Updated admin:', result);
       callback(null, result.affectedRows);
   });
 }
 
 
-// Cookie Management: Remove Cookie
-function deleteCookie(productID, callback) {
+// Admin Management: Remove Admin
+function deleteAdmin(productID, callback) {
   const sql = 'DELETE FROM Product WHERE ProductID=?';
   connection.query(sql, [productID], (err, result) => {
     if (err) {
-      console.error('Error deleting cookie:', err);
+      console.error('Error deleting admin:', err);
       callback(err, null);
       return;
     }
@@ -119,6 +119,6 @@ function deleteCookie(productID, callback) {
 
 // =======================================
 
-module.exports = { addCookie, selectCookie, editCookie, deleteCookie };
+module.exports = { addAdmin, selectAdmin, editAdmin, deleteAdmin };
 
 // =======================================

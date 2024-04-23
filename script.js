@@ -9,6 +9,8 @@ const MagicalMunchiesService = require('./MagicalMunchiesService');
 const CookieManagementService = require('./CookieManagementService');
 const path = require('path');
 
+app.set('view engine', 'ejs');
+
 // Middleware to parse JSON bodies
 app.use(express.json());
 
@@ -80,26 +82,26 @@ app.post('/cookie-add', upload.single('Photo'), express.urlencoded({ extended: t
     });
 });
 
-// Cookie Management: Select Cookie
+// Cookie Management: Select Cookie Edit
 app.get('/cookie/:ProductID', (req, res) => {
     const productID = req.query.ProductID;
     CookieManagementService.selectCookie(productID, (err, result) => {
         if (err) {
             console.error('Error selecting cookie:', err);
             res.status(500).json({ error: 'Error selecting cookie' });
-        } else if (!result) {
+        } else if (!result || Array.isArray(result) && result.length === 0) {
             res.status(404).json({ error: 'Cookie not found' });
         } else {
-            res.sendFile(path.join(__dirname, '/html/CookieManagement/cookie_edit.html'));
+            res.sendFile(path.join(__dirname, '/html/CookieManagement/cookie_edit.html'), { cookieData : result });
         }
     });
 });
 
 // Cookie Management: Edit Cookie
-app.put('/cookie/:ProductID', (req, res) => {
-    const productID = req.query.ProductID;
+app.post('/cookie-edit/:ProductID', (req, res) => {
+    const productID = req.body.ProductID;
     const newData = req.body;
-    CookieManagementService.editCookie(ProductId, newData, (err, result) => {
+    CookieManagementService.editCookie(productID, newData, (err, result) => {
         if (err) {
             console.error('Error updating cookie:', err);
             res.status(500).json({ error: 'Error updating cookie' });
@@ -112,11 +114,11 @@ app.put('/cookie/:ProductID', (req, res) => {
 });
 
 // Cookie Management: Remove Cookie
-app.delete('/cookie/:id', (req, res) => {
-    const studentId = req.params.id;
-    CookieManagementService.deleteCookie(studentId, (err, result) => {
+app.post('/cookie-remove/:ProductID', (req, res) => {
+    const productID = req.body.ProductID;
+    CookieManagementService.deleteCookie(productID, (err, result) => {
         if (err) {
-            console.error('Error deleting cookie:', err);
+            console.error('Error updating cookie:', err);
             res.status(500).json({ error: 'Error deleting cookie' });
         } else if (result === 0) {
             res.status(404).json({ error: 'Cookie not found' });

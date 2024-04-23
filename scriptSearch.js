@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchAllProducts()
     }
     
-    
+
 
     // Function to fetch all products from the server
     function fetchAllProducts() {
@@ -63,8 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p>Product ID: ${product.ProductID}</p>
                     <p>Name: ${product.Name}</p>
                     <p>Price: ${product.Price}</p>
-                    <!-- Add more details as needed -->
+
+
                     <img id="section-image" src="..${product.PhotoPath}">
+
+
                 `;
                 // Add event listener to each product box
                 productBox.addEventListener('click', () => {
@@ -91,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    if (window.location.pathname.includes('product-details.html')) {
-        fetchProductDetails();
-    }
+
+    fetchProductDetails();
+    
 
     // product detail
     function fetchProductDetails() {
@@ -121,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to update the HTML with the fetched product details
     function updateProductDetails(product) {
+        console.log(product)
         // Check if the array contains any items
         if (product.length > 0) {
             // Get the first item (assuming there's only one item in the array)
@@ -128,6 +132,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
             const productDetailsContainer = document.getElementById('product-details');
     
+            
+            const productPicElement = productDetailsContainer.querySelector('.product-picture')
+            productPicElement.src = `..${firstProduct.PhotoPath}`;
+
             // Update product name
             const productNameElement = productDetailsContainer.querySelector('.product-name');
             productNameElement.textContent = `Name: ---${firstProduct.Name}---`;

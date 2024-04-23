@@ -9,19 +9,41 @@
   <link rel="icon" href="../Image/icon.png">
   <style>
     /* Additional CSS styles */
-    #section-template {
+    main {
       display: flex;
-      flex-direction: row;
+      height: 90vh;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg3.png");
+      background-size: cover;
+      background-position: center;
       padding: 50px 0;
     }
-    #section-template img {
-      width: 50%;
+
+    #section-template {
+      display: flex;
+      flex-direction: row-reverse; /* Reverses the order of elements */
+      align-items: center;
+      justify-content: space-around;
+      width: 80%; /* Adjust width as needed */
+      margin-top: 20px; /* Adjust margin-top as needed */
     }
+
+    #section-template img {
+      width: auto;
+      height: 90%;
+    }
+
     #section-template .content {
       width: 40%;
     }
+
+    #section-details {
+      font-size: 30px;
+      margin: auto;
+    }
+
     @media screen and (max-width: 768px) {
       /* Responsive styles */
       #section-template {
@@ -36,13 +58,29 @@
         margin-top: 20px;
       }
     }
+    #back-button {
+      margin-top: 20px; /* Adjust top margin */
+      padding: 12px;
+      color: black;
+      -webkit-text-stroke-color: black;
+      -webkit-text-stroke-width: 0.7px;
+      background-color: white;
+      border-radius: 20px;
+      border: solid #000000 2px;
+      margin-left: auto; /* Moves the button to the right */
+    }
+
+  ol {
+  list-style-type: none; /* Removes bullet points */
+  }
+
+    #section-title {
+      font-size: 55px;
+      text-align: center;
+    }
+
     #section-template {
-      background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/mainPage/Bg3.png");
-      background-size: auto 50%; /* Set background size to auto width and 25% height */
-      background-size: cover;
-      background-position: center;
-      place-items: center;
-      height: 100%;
+      margin-right: 20px; /* Adjust as needed */
     }
   </style>
   <meta charset="UTF-8">
@@ -50,6 +88,7 @@
   <script src="../script.js"></script>
   <title>Magical Munchies</title>
 </head>
+
 <body>
 
   <nav>
@@ -63,31 +102,27 @@
   </nav>
 
   <main>
-    <section id="section-template">
-      <img id="section-image" src="" alt="Template Image">
-      <div class="content">
-        <h2 id="section-title">-Section Title-</h2>
-        <ul id="section-details">
-          <li>Name: </li>
-          <li>Birthday: </li>
-          <li>Instagram: </li>
-          <li>Proficiency: </li>
-        </ul>
-        <button onclick="history.back()">Back</button>
+    <h1 id="section-title">-The Tortured Bakers Department-</h1>
+    <div id="section-template">
+      <div class="content" id="section-details">
+          <br>Name: Napatkrit Asavarojpanich </br>
+          <br>Birthday: 10 November 2003</br>
+          <br>Instagram: @napatkrit</br>
+          <br>Proficiency:</br>
+          <ul>
+            <li>Master of History of Magic</li>
+          </ul>
+        <a id="back-button" href="mainPage.html">Back</a>
       </div>
-    </section>
+      <img id="section-image" src="../Image/Team_page/Kung_teampage.png" alt="Template Image">
+    </div>
   </main>
 
   <footer>
     <p>Copyright © 2023. All Right Reserved - AnavinnCookie</p>
   </footer>
 
-  <script>
-    // Replace placeholders with actual content
-    document.getElementById('section-image').src = "../Image/mainPage/Barbell.png"; // Replace with actual image URL
-    document.getElementById('section-title').innerText = "The Tortured Bakers Department"; // Replace with actual title
-    document.querySelectorAll('#section-details li')[0].innerText = "Name: MagicalMunchies@gmail.com"; // Replace with actual detail
-    // Add more lines to replace other details as needed
-  </script>
 </body>
 </html>
+
+ 

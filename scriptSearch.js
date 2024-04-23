@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
         fetchAllProducts()
     }
     
+    
 
     // Function to fetch all products from the server
     function fetchAllProducts() {

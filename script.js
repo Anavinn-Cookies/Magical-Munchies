@@ -16,6 +16,12 @@ app.use('/', appRouter);
 
 app.set('view engine', 'ejs');
 
+app.use(cors({
+    origin: 'http://127.0.0.1:5501', // Update this with your frontend URL
+    credentials: true // If your frontend sends credentials (e.g., cookies)
+}));
+
+
 // Middleware to parse JSON bodies
 app.use(express.json());
 

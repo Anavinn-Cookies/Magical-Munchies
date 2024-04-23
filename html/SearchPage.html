@@ -1,66 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/css/Searchstyles.css">
-  <metacharset="UTF-8">
+  <link rel="stylesheet" href="../css/Searchstyles.css">
+  <link rel="stylesheet" href="../css/nav_footer.css">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../scriptSearch.js"></script>
   <title>Magical Munchies</title>
-  <meta name="description" content="Magical Munchies is a captivating store that specializes in a selection of fantasy themed cookies and potions.">
-  <meta name="keywords" content="Magical Munchies, Anavinn-Cookies, Napatkrit Asavarojpanich, Kaninpat Janthasri, Jirakit Kanjanawaraporn, Natchapol Mingmahaphan, Anavinn Rujithanyapat">
-  <link rel="icon" href="../Image/icon.png">
 </head>
-
-<script>
-  function getResponse(){
-      let API_key = "411aadd5963a408a89e8761e49667363"
-      let query = document.querySelector("#q").value;
-      console.log(query);
-      let rooturl = "https://api.spoonacular.com/recipes/complexSearch?apiKey=" + API_key + "&query=" + query;
-
-      fetch(rooturl)
-          .then((res) => res.json())
-          .then((data) => {
-              let outputHTML = "<ul>"; // Change output hereๆๆๆๆ
-              data.results.forEach(element => {
-                  outputHTML += "<li>" + element.title + ":<br>" + "</li>" + "<img src='" + element.image + "'>" + "<br>";
-              });
-              outputHTML += "</ul>";
-              document.querySelector("#output").innerHTML = outputHTML;
-          })
-          .catch((err) => console.log(err));
-  }
-  </script>
-
 <body>
-
   <nav>
-    <img src="/Image/NAV/text_logo 2.png" alt="Magical Munchies Logo">
+    <img src="../Image/NAV/text_logo 2.png" alt="Magical Munchies Logo">
     <p>Magical Munchies</p>
     <div class="nav-links-wrapper">
       <a href="mainPage.html">Home</a>
       <a href="SearchPage.html">Store</a>
-      <a href="#">Login</a>
+      <a href="admin.html">Login</a>
     </div>
   </nav>
-  
- 
+
   <main>
-    <section id = "intro-magical-munchies">
-      <img src="/Image/mainPage/text_logo 2.png" alt="Logo" id="logo-intro" class="col-sm-6">
-      <img src="/Image/Search/Store-Page1.png" id="store" width="394" height="126">
+    <section id="intro-magical-munchies">
+      <img src="../Image/mainPage/text_logo 2.png" alt="Logo" id="logo-intro" class="col-sm-6">
+      <img src="../Image/Search/Store-Page1.png" id="store" width="394" height="126">
     </section>
 
     <section id="search">
-      <form class="searchname" method="POST">
-        <p>Name</p>
-        <input type="text" class="form-control" name="search_value">
-        <p>Flavor</p>
-        <input type="text" class="form-control" name="search_value">
-        <button onclick="getResponse()" type="submit" class="btn btn-primary">
-         Search
-        </button>
-      </form>
+      <div id="search-container">
 
-      <div id="output"> </div>
+        <form class="searchname" method="POST">
+          <!-- <p>ID</p>
+          <input type="text" class="sform-control" id="id_value" name="id_value"> -->
+
+          <p>Name</p>
+          <input type="text" class="form-control" id ="name_value" name="name_value">
+
+          <p>Flavor</p>
+          <input type="text" class="form-control" id ="flavor_value" name="flavor_value">
+
+          <p>Price: Start</p>
+          <input type="number" class="form-control" id ="price_start" name="price_start" placeholder="0">
+
+          <p>Price: End</p>
+          <input type="number" class="form-control" id ="price_end" name="price_end" placeholder="9999">
+
+          
+          <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+        </form>
+      </div>
       
+     
     </section>
+    <div id="output-box"> 
+      <div id="output"></div>
+    </div>
+  </main>
+
+
+
+<footer>
+  <p>Copyright © 2023. All Right Reserved - AnavinnCookie</p>
+</footer>
+
+</body>
+</html>

@@ -5,62 +5,10 @@
   <link rel ="stylesheet" href="../css/nav_footer.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="../script.js"></script>
+  <!-- <script src="../script.js"></script> -->
   <title>Magical Munchies</title>
-  <meta name="description" content="Magical Munchies is a captivating store that specializes in a selection of fantasy themed cookies and potions.">
-  <meta name="keywords" content="Magical Munchies, Anavinn-Cookies, Napatkrit Asavarojpanich, Kaninpat Janthasri, Jirakit Kanjanawaraporn, Natchapol Mingmahaphan, Anavinn Rujithanyapat">
-  <link rel="icon" href="../Image/icon.png">
 </head>
-<script>
-  
-document.addEventListener("DOMContentLoaded", function() {
-    var liElements = document.querySelectorAll('li');
-  
-    liElements.forEach(function(li) {
-      li.addEventListener('click', function() {
-        var id = this.id;
-  
-        // Update infoContainer
-        var infoContainer = document.getElementById('infoContainer');
-        fetch('html/team_template.html.html?id=' + id)
-          .then(response => response.text())
-          .then(data => {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(data, 'text/html');
-            var infoElement = doc.getElementById(id);
-            var infoContent = infoElement.innerHTML;
-            infoContainer.innerHTML = infoContent;
-          })
-          .catch(error => console.error('Error fetching content:', error));
-  
-        // Update section-template
-        var sectionTitle = document.getElementById('section-title');
-        var sectionImage = document.getElementById('section-image');
-        var sectionDetails = document.getElementById('section-details');
-        
-        // Fetch and display the information based on the id
-        fetch('data.json') // Assuming data is stored in a JSON file
-          .then(response => response.json())
-          .then(data => {
-            if (data.hasOwnProperty(id)) {
-              var info = data[id];
-  
-              sectionTitle.textContent = info.name;
-              sectionImage.src = info.imageSrc;
-              sectionDetails.innerHTML = '<li>Name: ' + info.name + '</li>' +
-                                         '<li>Birthday: ' + info.birthday + '</li>' +
-                                         '<li>Instagram: ' + info.instagram + '</li>' +
-                                         '<li>Proficiency: ' + info.proficiency + '</li>';
-            } else {
-              console.error('Information not found for id:', id);
-            }
-          })
-          .catch(error => console.error('Error fetching data:', error));
-      });
-    });
-  });
-  
-</script>
+
 <body>
 
   <nav>
@@ -68,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <p>Magical Munchies</p>
     <div class="nav-links-wrapper">
       <a href="mainPage.html">Home</a>
-      <a href="#">Store</a>
+      <a href="SearchPage.html">Store</a>
       <a href="admin.html">Login</a>
     </div>
   </nav>
@@ -93,27 +41,27 @@ document.addEventListener("DOMContentLoaded", function() {
 
       <ul>
         <li id="Kung">
-          <img src="../Image/mainPage/Kung.png" alt="Napatkrit Image">
+          <a href="Kung_teampage.html"><img src="../Image/Team_page/Kung_teampage.png" alt="Napatkrit Image"></a>
           <br>
           Napatkrit Asavarojpanich
         </li>
         <li id="Kan">
-          <img src="../Image/mainPage/Kan.png" alt="Kaninpat Image">
+          <a href="Kan_teampage.html"><img src="../Image/Team_page/Kan_teampage.png" alt="Kaninpat Image"></a>
           <br>
           Kaninpat Janthasri
         </li>
         <li id="Barbell">
-          <img src="../Image/mainPage/Barbell.png" alt="Jirakit Image">
+          <a href="Barbell_teampage.html"><img src="../Image/Team_page/Barbell_teampage.png" alt="Jirakit Image"></a>
           <br>
           Jirakit Kanjanawaraporn
         </li>
         <li id="Golf">
-          <img src="../Image/mainPage/Golf.png" alt="Natchapol Image">
+          <a href="Golf_teampage.html"><img src="../Image/Team_page/Golf_teampage.png" alt="Natchapol Image"></a>
           <br>
           Natchapol Mingmahaphan
         </li>
         <li id="Son">
-          <img src="../Image/mainPage/Son.png" alt="Anavinn Image">
+          <a href="Son_teampage.html"><img src="../Image/Team_page/Son_teampage.png" alt="Anavinn Image"></a>
           <br>
           Anavinn Rujithanyapat
         </li>

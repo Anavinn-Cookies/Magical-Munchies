@@ -13,10 +13,12 @@
   }
 
   .BG-container {
-    flex: 1; /* Let this container grow to fill remaining space */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../Image/login/CookieBG\ 1.png");
-    background-size: auto 50%; /* Set background size to auto width and 50% height */
-    height: 100vh; /* Make the container take the full height of the viewport */
+    background-image: url("../Image/Admin_Webpage/LoginBG.png");
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
   }
   
   

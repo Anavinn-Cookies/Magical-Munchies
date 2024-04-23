@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  background-image: url("../../Image/CookieManagement/CookieManagementBG.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.form {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10%;
+  width: 80%;
+  height: 60%;
+  max-width: 1500px;
+  max-height: 750px;
+  margin: auto auto;
+  padding: 5%;
+  font-family: "Press Start 2P", system-ui;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-row-gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form h1 {
+  color: black;
+  display: flex;
+  justify-content: center;
+  -webkit-text-stroke-width: 0.5px;
+}
+.upper-row,
+.last-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 0px;
+}
+
+.middle-row {
+  grid-column: 1/span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 0px;
+}
+
+.left-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+  -webkit-text-stroke-color: #000;
+  -webkit-text-stroke-width: 0px;
+}
+
+.form button[type=submit] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10%;
+  box-sizing: border-box;
+  height: 50px;
+  font-size: 100%;
+}/*# sourceMappingURL=cookie_add.css.map */

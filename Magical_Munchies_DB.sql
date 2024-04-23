@@ -156,8 +156,7 @@ INSERT INTO `Product` (`Name`, `Flavor`, `Detail`, `Price`, `PhotoPath`) VALUES
 ('SugarRush', 'Decarent caramel', 'Decadent caramel and creamy vanilla swirl together in a whirlwind of sweetness that sends your taste buds soaring to new heights of bliss.', 2.79, '/Image/ProductImage/SugarRush.png'),
 ('Summer Paradise', 'Juicy pineapple', 'Juicy pineapple and coconut cream blend seamlessly to create a tropical oasis of flavor that transports you to sun-drenched beaches and crystal-clear waters.', 4.29, '/Image/ProductImage/Summer_Paradise.png');
 
--- SELECT * FROM `Product`;
-
+SELECT * FROM Product WHERE ProductID=1;
 -- SELECT * FROM LoginInformation WHERE Username = "Natchapol Mingmahaphan" AND Password = "1234"
 
 -- ================================================================================

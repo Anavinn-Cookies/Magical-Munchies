@@ -1,0 +1,12 @@
+footer {
+  background-color: black;
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+footer p {
+  color: white;
+  font-size: 120%;
+  -webkit-text-stroke-width: 0.4px;
+}/*# sourceMappingURL=footer.css.map */
